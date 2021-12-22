@@ -121,9 +121,9 @@ std::string Format( const char *pchFormat, ... )
 	va_list args;
 	char pchBuffer[k_ulMaxStackString];
 
-	va_start( args, pchFormat );
+	//va_start( args, pchFormat );
 	int unSize = vsnprintf( pchBuffer, sizeof( pchBuffer ), pchFormat, args );
-	va_end( args );
+	//va_end( args );
 
 	// Something went fairly wrong
 	if ( unSize < 0 )
@@ -142,9 +142,9 @@ std::string Format( const char *pchFormat, ... )
 	std::vector< char > vecChar{};
 	vecChar.resize( unSize + 1 );
 
-	va_start( args, pchFormat );
+	//va_start( args, pchFormat );
 	unSize = vsnprintf( vecChar.data(), vecChar.size(), pchFormat, args );
-	va_end( args );
+	//va_end( args );
 
 	// Double check, just in case
 	if ( unSize < 0 )
